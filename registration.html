@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Регистрация / Вход • PythonPro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(to bottom, #0a0a1f, #111827);
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    .logo-font { font-family: 'Space Grotesk', sans-serif; }
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center p-6">
+
+  <div class="w-full max-w-lg glass rounded-3xl p-10 md:p-12 border border-indigo-500/20 shadow-2xl">
+
+    <div class="text-center mb-10">
+      <div class="logo-font text-5xl font-bold text-indigo-400 mb-2">PythonPro</div>
+      <h1 class="text-3xl font-bold mb-3">Регистрация / Вход</h1>
+      <p class="text-slate-400">
+        Получи код на почту и начни бесплатный урок за 30 секунд
+      </p>
+    </div>
+
+    <form id="reg-form" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-300">Имя</label>
+        <input 
+          type="text" 
+          id="name" 
+          required 
+          placeholder="Как тебя зовут?"
+          class="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 outline-none transition"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-300">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          required 
+          placeholder="example@gmail.com"
+          class="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 outline-none transition"
+        />
+      </div>
+
+      <button 
+        type="submit" 
+        id="submit-btn"
+        class="w-full py-5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 rounded-xl text-lg font-semibold transition shadow-lg shadow-indigo-900/30 disabled:opacity-50"
+      >
+        Получить код на почту
+      </button>
+    </form>
+
+    <!-- Блок ввода кода (скрыт по умолчанию) -->
+    <div id="code-block" class="hidden mt-10 space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-300">Код из письма (6 цифр)</label>
+        <input 
+          type="text" 
+          id="code-input" 
+          maxlength="6" 
+          placeholder="123456"
+          class="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-5 text-center text-3xl tracking-[0.5em] focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition font-mono"
+        />
+      </div>
+
+      <div id="timer" class="text-center text-sm text-orange-400 hidden">
+        Код действителен: <span id="time-left">10:00</span>
+      </div>
+
+      <button 
+        id="verify-btn"
+        class="w-full py-5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl text-lg font-semibold transition shadow-lg shadow-emerald-900/30"
+      >
+        Подтвердить код
+      </button>
+    </div>
+
+    <div class="mt-8 text-center text-sm text-slate-400">
+      Уже есть аккаунт? <a href="registration.html" class="text-indigo-400 hover:underline">Войти</a>
+    </div>
+  </div>
+
+  <!-- EmailJS + логика -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Замени на свои реальные значения!
+    emailjs.init({ publicKey: "MdzcYkXYKllfFpTi1" });
+
+    let generatedCode = null;
+    let timerInterval = null;
+
+    // Отправка формы
+    document.getElementById('reg-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const btn = document.getElementById('submit-btn');
+
+      if (!name || !email) {
+        alert("Заполните имя и email");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Отправка...';
+
+      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+      try {
+        await emailjs.send('service_ia58p5d', 'ТВОЙ_TEMPLATE_ID_ИЗ_EMAILJS', {
+          name: name,
+          code: generatedCode
+        });
+
+        alert(`Код отправлен на ${email}! Проверьте почту и папку "Спам".`);
+
+        document.getElementById('code-block').classList.remove('hidden');
+        document.getElementById('reg-form').classList.add('hidden');
+        startTimer();
+      } catch (err) {
+        alert('Ошибка отправки: ' + (err.text || 'попробуйте позже'));
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = 'Получить код на почту';
+      }
+    });
+
+    // Таймер 10 минут
+    function startTimer() {
+      const timerEl = document.getElementById('timer');
+      const timeLeftEl = document.getElementById('time-left');
+      timerEl.classList.remove('hidden');
+
+      let time = 600; // 10 минут
+
+      timerInterval = setInterval(() => {
+        time--;
+        const min = Math.floor(time / 60).toString().padStart(2, '0');
+        const sec = (time % 60).toString().padStart(2, '0');
+        timeLeftEl.textContent = `${min}:${sec}`;
+
+        if (time <= 0) {
+          clearInterval(timerInterval);
+          timeLeftEl.textContent = '00:00';
+          alert('Время действия кода истекло. Запросите новый код.');
+          resetForm();
+        }
+      }, 1000);
+    }
+
+    // Проверка кода
+    document.getElementById('verify-btn').addEventListener('click', () => {
+      const input = document.getElementById('code-input').value.trim();
+
+      if (!generatedCode) {
+        alert("Сначала запросите код");
+        return;
+      }
+
+      if (input === generatedCode) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        localStorage.setItem('pythonProUser', JSON.stringify({
+          name,
+          email,
+          registered: true,
+          date: new Date().toISOString()
+        }));
+
+        alert(`Добро пожаловать, ${name}! Перенаправляем на бесплатный урок...`);
+        window.location.href = 'lesson.html';
+      } else {
+        alert('Неверный код. Попробуйте снова.');
+      }
+    });
+
+    // Сброс формы при истечении времени
+    function resetForm() {
+      clearInterval(timerInterval);
+      document.getElementById('code-block').classList.add('hidden');
+      document.getElementById('reg-form').classList.remove('hidden');
+      generatedCode = null;
+    }
+  </script>
+</body>
+</html>

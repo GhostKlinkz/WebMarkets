@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Изучи Python с нуля до профессионала. Бесплатный стартовый урок и полноценный курс."/>
+  <title>PythonPro • С нуля до профи</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --accent: 99 102 241;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0a1f;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    .logo-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.055);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .section-header {
+      background: linear-gradient(90deg, rgb(99 102 241), rgb(167 139 250));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навбар -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl logo-font shadow-lg">
+          P
+        </div>
+        <span class="logo-font text-3xl font-bold tracking-tight text-white">Python<span class="text-indigo-400">Pro</span></span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-indigo-400 transition">О курсе</a>
+        <a href="#program" class="hover:text-indigo-400 transition">Программа</a>
+        <a href="#prices" class="hover:text-indigo-400 transition">Тарифы</a>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <span id="user-greeting" class="hidden text-sm text-slate-300 font-medium"></span>
+        <button id="logout-btn" class="hidden px-5 py-2.5 bg-red-600/30 hover:bg-red-600/50 rounded-lg text-sm font-medium transition">
+          Выйти
+        </button>
+        <a id="auth-link" href="registration.html" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-sm font-semibold transition">
+          Войти / Регистрация
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center pt-28 bg-gradient-to-br from-[#0a0a1f] via-[#0f172a] to-[#1e293b] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-8 logo-font">
+          Изучи Python<br/>с нуля до профессионала
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 mb-12">
+          Создавай ботов, сайты, игры и автоматизацию.<br/>
+          <span class="text-indigo-400 font-semibold">Первый урок — бесплатно</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-5">
+          <button onclick="checkAndRedirect()" class="px-10 py-6 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 rounded-2xl text-xl font-semibold transition shadow-xl shadow-indigo-900/30">
+            Начать бесплатно
+          </button>
+          <a href="#program" class="px-10 py-6 border-2 border-indigo-500/60 hover:border-indigo-400 rounded-2xl text-xl font-semibold transition">
+            Посмотреть программу
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Коротко о бесплатном уроке -->
+  <section class="py-24 bg-[#111827]/50">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-10 section-header">
+        Бесплатный стартовый урок уже ждёт тебя
+      </h2>
+      <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
+        Зарегистрируйся за 30 секунд → получи код на почту → введи его → и сразу первый урок + исходники.
+      </p>
+      <button onclick="checkAndRedirect()" class="inline-block px-12 py-6 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-2xl text-2xl font-bold transition shadow-lg shadow-emerald-900/30">
+        Получить бесплатный урок
+      </button>
+    </div>
+  </section>
+
+  <!-- Программа (пример) -->
+  <section id="program" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16 section-header">Программа курса</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass rounded-3xl p-8 card-hover">
+          <div class="text-5xl mb-6">1</div>
+          <h3 class="text-2xl font-bold mb-4">Основы Python</h3>
+          <p class="text-slate-400">Переменные, циклы, функции, списки, словари</p>
+        </div>
+        <div class="glass rounded-3xl p-8 card-hover">
+          <div class="text-5xl mb-6">2</div>
+          <h3 class="text-2xl font-bold mb-4">ООП и проекты</h3>
+          <p class="text-slate-400">Классы, наследование, Telegram-боты, парсеры</p>
+        </div>
+        <div class="glass rounded-3xl p-8 card-hover">
+          <div class="text-5xl mb-6">3</div>
+          <h3 class="text-2xl font-bold mb-4">Веб-разработка</h3>
+          <p class="text-slate-400">Flask / Django, базы данных, деплой</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="py-16 bg-black/50 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
+      © 2026 PythonPro •Dybai, Eath<br/>
+      Сделано с ❤️ для тех, кто хочет в IT
+    </div>
+  </footer>
+
+  <script>
+    // ──────────────────────────────────────────────
+    // Проверка авторизации и UI
+    // ──────────────────────────────────────────────
+    function updateAuthUI() {
+      const user = JSON.parse(localStorage.getItem('pythonProUser'));
+      const greeting = document.getElementById('user-greeting');
+      const logoutBtn = document.getElementById('logout-btn');
+      const authLink = document.getElementById('auth-link');
+
+      if (user && user.registered) {
+        if (greeting) {
+          greeting.textContent = `Привет, ${user.name || 'друг'}!`;
+          greeting.classList.remove('hidden');
+        }
+        if (logoutBtn) logoutBtn.classList.remove('hidden');
+        if (authLink) authLink.classList.add('hidden');
+      } else {
+        if (greeting) greeting.classList.add('hidden');
+        if (logoutBtn) logoutBtn.classList.add('hidden');
+        if (authLink) authLink.classList.remove('hidden');
+      }
+    }
+
+    // ──────────────────────────────────────────────
+    // Переход на регистрацию или урок
+    // ──────────────────────────────────────────────
+    function checkAndRedirect() {
+      const user = JSON.parse(localStorage.getItem('pythonProUser'));
+      if (user && user.registered) {
+        window.location.href = 'lesson.html';
+      } else {
+        window.location.href = 'registration.html';
+      }
+    }
+
+    // ──────────────────────────────────────────────
+    // Выход
+    // ──────────────────────────────────────────────
+    document.getElementById('logout-btn')?.addEventListener('click', () => {
+      localStorage.removeItem('pythonProUser');
+      alert('Вы вышли из аккаунта');
+      window.location.href = 'index.html';
+    });
+
+    // Запуск при загрузке
+    document.addEventListener('DOMContentLoaded', updateAuthUI);
+  </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бесплатный урок • PythonPro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0a1f;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    .logo-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .glass {
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    pre {
+      background: #00000088;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Courier New', monospace;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навбар -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl logo-font shadow-lg">
+          P
+        </div>
+        <span class="logo-font text-3xl font-bold tracking-tight text-white">
+          Python<span class="text-indigo-400">Pro</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="hover:text-indigo-400 transition text-sm font-medium">
+          На главную
+        </a>
+        <button id="logout-btn" class="px-5 py-2 bg-red-600/40 hover:bg-red-600/60 rounded-lg text-sm transition">
+          Выйти
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 pb-20 max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <div class="inline-block px-5 py-2 bg-emerald-600/20 text-emerald-400 rounded-full text-sm font-medium mb-6">
+        Бесплатный стартовый урок
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Добро пожаловать на первый урок!
+      </h1>
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+        Здесь ты напишешь свою первую программу на Python всего за 5–7 минут
+      </p>
+    </div>
+
+    <div class="glass rounded-3xl p-8 md:p-12 mb-12">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4">
+        <span class="text-4xl">👋</span> Урок 1: Привет, мир! + переменные
+      </h2>
+
+      <div class="space-y-10">
+        <!-- Шаг 1 -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">1. Установи Python (если ещё не установлен)</h3>
+          <p class="mb-4 text-slate-300">
+            Перейди по ссылке и скачай последнюю версию (рекомендую 3.11 или 3.12):
+          </p>
+          <a 
+            href="https://www.python.org/downloads/" 
+            target="_blank"
+            class="inline-flex items-center gap-3 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-xl text-white font-medium transition shadow-md"
+          >
+            <i class="fa-solid fa-download"></i> Скачать Python
+          </a>
+          <p class="mt-3 text-sm text-slate-400">
+            Во время установки обязательно поставь галочку «Add Python to PATH»
+          </p>
+        </div>
+
+        <!-- Шаг 2 -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">2. Открой терминал / командную строку</h3>
+          <ul class="list-disc pl-6 space-y-2 text-slate-300">
+            <li>Windows → Win + R → введи <code>cmd</code> → Enter</li>
+            <li>macOS → Spotlight (Cmd + Space) → Terminal</li>
+            <li>Linux → Ctrl + Alt + T</li>
+          </ul>
+        </div>
+
+        <!-- Шаг 3 -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">3. Запусти Python и первую программу</h3>
+          <p class="mb-4 text-slate-300">
+            В терминале введи команду:
+          </p>
+          <pre>python</pre>
+          <p class="my-4 text-slate-300">или (если не сработало)</p>
+          <pre>python3</pre>
+
+          <p class="my-6 text-slate-300 font-medium">
+            Когда увидишь <code>>>></code> — это значит, что Python запущен. Теперь копируй и вставляй по одной строке:
+          </p>
+
+          <pre class="text-emerald-300">
+print("Привет, мир! Я только что запустил Python 🚀")
+
+name = input("Как тебя зовут? ")
+print("Круто, " + name + "! Добро пожаловать в мир программирования.")
+
+age = int(input("Сколько тебе лет? "))
+if age >= 18:
+    print("Ты уже взрослый разработчик!")
+else:
+    print("Ты молодец, что начал так рано!")
+          </pre>
+
+          <p class="mt-6 text-slate-400 italic">
+            Нажми Enter после каждой строки. Когда закончишь — выйди из Python командой <code>exit()</code> или Ctrl+Z / Ctrl+D.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Дальше -->
+    <div class="text-center mt-16">
+      <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+        Это только начало. Хочешь полный курс с 30+ уроками, проектами (боты, сайты, игры), код-ревью и поддержкой ментора?
+      </p>
+      <a 
+        href="index.html#prices" 
+        class="inline-block px-12 py-6 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 rounded-2xl text-xl font-bold transition shadow-xl shadow-violet-900/30"
+      >
+        Разблокировать полный курс
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Скрипт защиты страницы + выход -->
+  <script>
+    // Проверка, что человек зарегистрирован
+    const user = JSON.parse(localStorage.getItem('pythonProUser'));
+
+    if (!user || !user.registered) {
+      document.body.innerHTML = `
+        <div class="min-h-screen flex items-center justify-center text-center p-6">
+          <div class="max-w-md glass p-12 rounded-3xl">
+            <h1 class="text-4xl font-bold mb-6 text-red-400">Доступ закрыт</h1>
+            <p class="text-xl mb-10">Чтобы открыть урок, нужно зарегистрироваться и подтвердить email.</p>
+            <a href="registration.html" class="inline-block px-10 py-5 bg-indigo-600 rounded-2xl text-lg font-semibold hover:bg-indigo-500 transition">
+              Зарегистрироваться
+            </a>
+          </div>
+        </div>
+      `;
+      return; // останавливаем выполнение
+    }
+
+    // Если всё ок — показываем страницу
+    console.log('Добро пожаловать обратно,', user.name || 'друг');
+
+    // Кнопка "Выйти"
+    document.getElementById('logout-btn')?.addEventListener('click', () => {
+      localStorage.removeItem('pythonProUser');
+      alert('Вы вышли из аккаунта');
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>
