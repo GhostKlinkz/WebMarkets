@@ -15,18 +15,24 @@
       background: linear-gradient(to bottom, #0a0a1f, #111827);
       color: #e2e8f0;
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
     }
     .logo-font { font-family: 'Space Grotesk', sans-serif; }
     .glass {
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
     }
   </style>
 </head>
-<body class="flex items-center justify-center p-6">
+<body>
 
-  <div class="w-full max-w-lg glass rounded-3xl p-10 md:p-12 border border-indigo-500/20 shadow-2xl">
+  <div class="w-full max-w-lg glass p-10 md:p-12">
 
     <div class="text-center mb-10">
       <div class="logo-font text-5xl font-bold text-indigo-400 mb-2">PythonPro</div>
@@ -68,7 +74,7 @@
       </button>
     </form>
 
-    <!-- Блок ввода кода (скрыт по умолчанию) -->
+    <!-- Блок ввода кода -->
     <div id="code-block" class="hidden mt-10 space-y-4">
       <div>
         <label class="block text-sm font-medium mb-2 text-slate-300">Код из письма (6 цифр)</label>
@@ -101,7 +107,7 @@
   <!-- EmailJS + логика -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // Замени на свои реальные значения!
+    // Твои реальные ключи
     emailjs.init({ publicKey: "MdzcYkXYKllfFpTi1" });
 
     let generatedCode = null;
@@ -126,7 +132,7 @@
       generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
 
       try {
-        await emailjs.send('service_ia58p5d', 'ТВОЙ_TEMPLATE_ID_ИЗ_EMAILJS', {
+        await emailjs.send('service_ia58p5d', 'template_4a9pih1', {
           name: name,
           code: generatedCode
         });
@@ -137,8 +143,8 @@
         document.getElementById('reg-form').classList.add('hidden');
         startTimer();
       } catch (err) {
-        alert('Ошибка отправки: ' + (err.text || 'попробуйте позже'));
-        console.error(err);
+        alert('Ошибка отправки: ' + (err.text || err.message || 'попробуйте позже'));
+        console.error('EmailJS ошибка:', err);
       } finally {
         btn.disabled = false;
         btn.innerHTML = 'Получить код на почту';
