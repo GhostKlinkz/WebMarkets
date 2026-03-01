@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Вхід / Реєстрація • PythonPro</title>
+  <title>Вход / Регистрация • PythonPro</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -36,19 +36,19 @@
 
     <div class="text-center mb-10">
       <div class="logo-font text-5xl font-bold text-indigo-400 mb-2">PythonPro</div>
-      <h1 class="text-3xl font-bold mb-3">Вхід / Реєстрація</h1>
+      <h1 class="text-3xl font-bold mb-3">Вход / Регистрация</h1>
       <p class="text-slate-400" id="form-title">
-        Введіть email, щоб отримати код підтвердження
+        Введите email, чтобы получить код подтверждения
       </p>
     </div>
 
     <form id="reg-form" class="space-y-6">
       <div>
-        <label class="block text-sm font-medium mb-2 text-slate-300">Ім'я (лише при реєстрації)</label>
+        <label class="block text-sm font-medium mb-2 text-slate-300">Имя (только при первой регистрации)</label>
         <input 
           type="text" 
           id="name" 
-          placeholder="Наприклад: Тарас"
+          placeholder="Например: Тарас"
           class="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 focus:border-indigo-400 outline-none transition"
         />
       </div>
@@ -69,14 +69,14 @@
         id="submit-btn"
         class="w-full py-5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 rounded-xl text-lg font-semibold transition shadow-lg shadow-indigo-900/30 disabled:opacity-50"
       >
-        Отримати код
+        Получить код
       </button>
     </form>
 
-    <!-- Блок вводу коду -->
+    <!-- Блок ввода кода -->
     <div id="code-block" class="hidden mt-10 space-y-4">
       <div>
-        <label class="block text-sm font-medium mb-2 text-slate-300">Код з листа (6 цифр)</label>
+        <label class="block text-sm font-medium mb-2 text-slate-300">Код из письма (6 цифр)</label>
         <input 
           type="text" 
           id="code-input" 
@@ -87,21 +87,21 @@
       </div>
 
       <div id="timer" class="text-center text-sm text-orange-400 hidden">
-        Код дійсний: <span id="time-left">10:00</span>
+        Код действителен: <span id="time-left">10:00</span>
       </div>
 
       <button 
         id="verify-btn"
         class="w-full py-5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl text-lg font-semibold transition shadow-lg shadow-emerald-900/30"
       >
-        Підтвердити код
+        Подтвердить код
       </button>
     </div>
 
-    <div class="mt-8 text-center text-sm text-slate-400">
-      <a href="#" id="switch-to-login" class="text-indigo-400 hover:underline">Уже є аккаунт? Увійти</a>
-      <span class="mx-2">•</span>
-      <a href="index.html" class="text-indigo-400 hover:underline">На головну</a>
+    <div class="mt-8 text-center text-sm text-slate-400 space-x-4">
+      <a href="#" id="switch-to-login" class="text-indigo-400 hover:underline">Уже есть аккаунт? Войти</a>
+      <span>•</span>
+      <a href="index.html" class="text-indigo-400 hover:underline">На главную</a>
     </div>
   </div>
 
@@ -112,34 +112,35 @@
     let generatedCode = null;
     let timerInterval = null;
 
-    // Перевірка, чи вже залогінений
+    // Проверка, если уже залогинен
     const user = JSON.parse(localStorage.getItem('pythonProUser'));
     if (user && user.registered) {
-      document.getElementById('form-title').textContent = "Ви вже увійшли. Переходимо на урок...";
+      document.getElementById('form-title').textContent = "Вы уже вошли. Переходим на урок...";
       document.getElementById('reg-form').style.display = 'none';
+      document.getElementById('code-block').style.display = 'none';
       setTimeout(() => {
         window.location.href = 'lesson.html';
       }, 1500);
     }
 
-    // Форма
+    // Форма отправки
     document.getElementById('reg-form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('name').value.trim() || "Користувач";
+      const name = document.getElementById('name').value.trim() || "Пользователь";
       const email = document.getElementById('email').value.trim();
       const btn = document.getElementById('submit-btn');
 
       if (!email) {
-        alert("Введіть email");
+        alert("Введите email");
         return;
       }
 
       btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Відправка...';
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Отправка...';
 
       generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
-      console.log("Згенерований код:", generatedCode);
+      console.log("Сгенерированный код:", generatedCode);
 
       try {
         await emailjs.send('service_ia58p5d', 'template_4a9pih1', {
@@ -147,26 +148,31 @@
           code: generatedCode
         });
 
-        alert(`Код надіслано на ${email}! Перевірте пошту та "Спам".`);
+        alert(`Код отправлен на ${email}! Проверьте почту и "Спам".`);
 
         document.getElementById('code-block').classList.remove('hidden');
         document.getElementById('reg-form').classList.add('hidden');
         startTimer();
       } catch (err) {
-        alert('Помилка: ' + (err.text || err.message || 'спробуйте пізніше'));
+        alert('Ошибка: ' + (err.text || err.message || 'попробуйте позже'));
         console.error(err);
       } finally {
         btn.disabled = false;
-        btn.innerHTML = 'Отримати код';
+        btn.innerHTML = 'Получить код';
       }
     });
 
-    // Підтвердження коду
+    // Подтверждение кода
     document.getElementById('verify-btn').addEventListener('click', () => {
       const input = document.getElementById('code-input').value.trim();
 
+      if (!generatedCode) {
+        alert("Сначала запросите код");
+        return;
+      }
+
       if (input === generatedCode) {
-        const name = document.getElementById('name').value.trim() || "Користувач";
+        const name = document.getElementById('name').value.trim() || "Пользователь";
         const email = document.getElementById('email').value.trim();
 
         localStorage.setItem('pythonProUser', JSON.stringify({
@@ -176,10 +182,10 @@
           date: new Date().toISOString()
         }));
 
-        alert(`Ласкаво просимо, ${name}! Переходимо до уроку...`);
+        alert(`Добро пожаловать, ${name}! Переходим к бесплатному уроку...`);
         window.location.href = 'lesson.html';
       } else {
-        alert('Невірний код. Спробуйте ще раз.');
+        alert('Неверный код. Попробуйте снова.');
       }
     });
 
@@ -200,7 +206,7 @@
         if (time <= 0) {
           clearInterval(timerInterval);
           timerEl.classList.add('hidden');
-          alert('Час коду сплив. Запросіть новий.');
+          alert('Время кода истекло. Запросите новый.');
           document.getElementById('code-block').classList.add('hidden');
           document.getElementById('reg-form').classList.remove('hidden');
           generatedCode = null;
@@ -208,12 +214,12 @@
       }, 1000);
     }
 
-    // Перемикання на "вхід" (очищення форми)
+    // Переключение на режим входа
     document.getElementById('switch-to-login')?.addEventListener('click', (e) => {
       e.preventDefault();
       document.getElementById('name').value = '';
-      document.getElementById('name').placeholder = "Ім'я не обов'язкове для входу";
-      document.getElementById('form-title').textContent = "Введіть email для отримання коду входу";
+      document.getElementById('name').placeholder = "Имя не обязательно для входа";
+      document.getElementById('form-title').textContent = "Введите email для получения кода входа";
     });
   </script>
 </body>
