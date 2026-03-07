@@ -136,10 +136,50 @@
     </div>
   </section>
 
+  <!-- Тарифы -->
+  <section id="prices" class="py-24 bg-[#111827]/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16 section-header">Выбери свой тариф</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Бесплатный -->
+        <div class="glass rounded-3xl p-8 card-hover">
+          <h3 class="text-3xl font-bold mb-4">Старт</h3>
+          <p class="text-5xl font-bold mb-6">0 ₽</p>
+          <ul class="space-y-4 mb-8 text-slate-300">
+            <li>✓ 1 бесплатный урок</li>
+            <li>✓ Базовые concepts</li>
+            <li>✓ Код из урока</li>
+          </ul>
+          <button onclick="checkAndRedirect()" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition">
+            Начать бесплатно
+          </button>
+        </div>
+        <!-- Полный курс -->
+        <div class="glass rounded-3xl p-8 card-hover border-2 border-indigo-500 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold px-6 py-2 rounded-full text-sm">
+            Лучший выбор
+          </div>
+          <h3 class="text-3xl font-bold mb-4">Профи</h3>
+          <p class="text-5xl font-bold mb-6">9 900 ₽</p>
+          <ul class="space-y-4 mb-8 text-slate-300">
+            <li>✓ Все 35 уроков</li>
+            <li>✓ Telegram-бот + парсер</li>
+            <li>✓ Веб-сайт на Django</li>
+            <li>✓ Чат с ментором</li>
+            <li>✓ Сертификат</li>
+          </ul>
+          <a href="#" class="block w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 rounded-xl font-semibold text-center transition">
+            Купить сейчас
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Футер -->
   <footer class="py-16 bg-black/50 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-      © 2026 PythonPro,Earth •2026<br/>
+      © 2026 PythonPro, Earth • Все права защищены<br/>
       Сделано с ❤️ для тех, кто хочет в IT
     </div>
   </footer>
@@ -169,12 +209,13 @@
     }
 
     // ──────────────────────────────────────────────
-    // Переход на регистрацию или урок
+    // Переход на регистрацию или страницу уроков
     // ──────────────────────────────────────────────
     function checkAndRedirect() {
       const user = JSON.parse(localStorage.getItem('pythonProUser'));
       if (user && user.registered) {
-        window.location.href = 'lesson.html';
+        // ✅ ИСПРАВЛЕНО: теперь ведет на страницу со всеми уроками
+        window.location.href = 'lessons.html';
       } else {
         window.location.href = 'registration.html';
       }
@@ -193,5 +234,4 @@
     document.addEventListener('DOMContentLoaded', updateAuthUI);
   </script>
 </body>
-
 </html>
