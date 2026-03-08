@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Изучи Python с нуля до профессионала. Бесплатный стартовый урок и полноценный курс."/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Изучи Python с нуля до профессионала. Бесплатный стартовый урок и полноценный курс.">
   <title>PythonPro • С нуля до профи</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -78,10 +78,10 @@
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="text-center max-w-4xl mx-auto">
         <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-8 logo-font">
-          Изучи Python<br/>с нуля до профессионала
+          Изучи Python<br>с нуля до профессионала
         </h1>
         <p class="text-xl md:text-2xl text-slate-300 mb-12">
-          Создавай ботов, сайты, игры и автоматизацию.<br/>
+          Создавай ботов, сайты, игры и автоматизацию.<br>
           <span class="text-indigo-400 font-semibold">Первый урок — бесплатно</span>
         </p>
 
@@ -179,15 +179,12 @@
   <!-- Футер -->
   <footer class="py-16 bg-black/50 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-      © 2026 PythonPro, Earth • Все права защищены<br/>
+      © 2026 PythonPro, Earth • Все права защищены<br>
       Сделано с ❤️ для тех, кто хочет в IT
     </div>
   </footer>
 
   <script>
-    // ──────────────────────────────────────────────
-    // Проверка авторизации и UI
-    // ──────────────────────────────────────────────
     function updateAuthUI() {
       const user = JSON.parse(localStorage.getItem('pythonProUser'));
       const greeting = document.getElementById('user-greeting');
@@ -208,29 +205,21 @@
       }
     }
 
-    // ──────────────────────────────────────────────
-    // Переход на регистрацию или страницу уроков
-    // ──────────────────────────────────────────────
     function checkAndRedirect() {
       const user = JSON.parse(localStorage.getItem('pythonProUser'));
       if (user && user.registered) {
-        // ✅ ИСПРАВЛЕНО: теперь ведет на страницу со всеми уроками
         window.location.href = 'lessons.html';
       } else {
         window.location.href = 'registration.html';
       }
     }
 
-    // ──────────────────────────────────────────────
-    // Выход
-    // ──────────────────────────────────────────────
     document.getElementById('logout-btn')?.addEventListener('click', () => {
       localStorage.removeItem('pythonProUser');
       alert('Вы вышли из аккаунта');
       window.location.href = 'index.html';
     });
 
-    // Запуск при загрузке
     document.addEventListener('DOMContentLoaded', updateAuthUI);
   </script>
 </body>
