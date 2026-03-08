@@ -57,7 +57,7 @@
           <a href="lesson.html" class="flex-1 px-4 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-xl text-white text-center text-sm font-medium transition">Пройти урок</a>
           <button onclick="toggleQuiz('quiz-1')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
         </div>
-        <!-- Квиз -->
+        <!-- Квиз 1 -->
         <div id="quiz-1" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
           <h4 class="font-bold mb-4">Квиз: Основы</h4>
           <p class="mb-3">1. Что выведет print("Hello")?</p>
@@ -81,13 +81,20 @@
           <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
           <button onclick="toggleQuiz('quiz-2')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
         </div>
+        <!-- Квиз 2 -->
         <div id="quiz-2" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
           <h4 class="font-bold mb-4">Квиз: Циклы</h4>
-          <p class="mb-3">2. Сколько раз выполнится цикл for i in range(5)?</p>
+          <p class="mb-3">1. Сколько раз выполнится цикл for i in range(5)?</p>
           <div class="space-y-2">
             <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">5 раз</button>
             <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">4 раза</button>
             <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">6 раз</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой оператор прерывает цикл?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">break</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">stop</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">exit</button>
           </div>
         </div>
       </div>
@@ -104,6 +111,22 @@
           <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
           <button onclick="toggleQuiz('quiz-3')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
         </div>
+        <!-- Квиз 3 -->
+        <div id="quiz-3" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Списки</h4>
+          <p class="mb-3">1. Как добавить элемент в конец списка?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">append()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">add()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">push()</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как получить последний элемент списка?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">list[-1]</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">list[last]</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">list[end]</button>
+          </div>
+        </div>
       </div>
 
       <!-- Урок 4 -->
@@ -117,6 +140,22 @@
         <div class="flex gap-3">
           <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
           <button onclick="toggleQuiz('quiz-4')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 4 -->
+        <div id="quiz-4" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Словари</h4>
+          <p class="mb-3">1. Как получить значение по ключу 'name'?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">dict['name']</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">dict.name</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">dict->name</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как получить все ключи словаря?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">dict.keys()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">dict.key()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">dict.all()</button>
+          </div>
         </div>
       </div>
 
@@ -132,10 +171,25 @@
           <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
           <button onclick="toggleQuiz('quiz-5')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
         </div>
+        <!-- Квиз 5 -->
+        <div id="quiz-5" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Функции</h4>
+          <p class="mb-3">1. Какое ключевое слово используется для создания функции?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">def</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">func</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">function</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как вернуть значение из функции?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">return</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">send</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">result</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Добавляю ещё 30 уроков (всего 35) – названия и краткое описание -->
-
+      <!-- Урок 6 -->
       <div class="glass rounded-3xl p-6 hover:scale-105 transition">
         <div class="flex items-center justify-between mb-3">
           <span class="text-4xl">📂</span>
@@ -147,8 +201,25 @@
           <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
           <button onclick="toggleQuiz('quiz-6')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
         </div>
+        <!-- Квиз 6 -->
+        <div id="quiz-6" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Файлы</h4>
+          <p class="mb-3">1. Какой режим открытия файла для чтения?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">'r'</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">'read'</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">'w'</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как правильно открыть файл с автоматическим закрытием?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">with open() as f:</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">file = open()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">open(file)</button>
+          </div>
+        </div>
       </div>
 
+      <!-- Урок 7 -->
       <div class="glass rounded-3xl p-6 hover:scale-105 transition">
         <div class="flex items-center justify-between mb-3">
           <span class="text-4xl">🧬</span>
@@ -160,42 +231,863 @@
           <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
           <button onclick="toggleQuiz('quiz-7')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
         </div>
+        <!-- Квиз 7 -->
+        <div id="quiz-7" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: ООП</h4>
+          <p class="mb-3">1. Как создать класс в Python?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">class MyClass:</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Class MyClass</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">def class MyClass</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как называется метод-конструктор в классе?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__init__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__new__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">construct</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Продолжаю до 35 – чтобы не перегружать ответ, перечислю названия (вставь их в grid аналогично) -->
+      <!-- Урок 8 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">👨‍👦</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 8: Наследование и полиморфизм</h3>
+        <p class="text-slate-400 mb-4 text-sm">extends, super, переопределение методов</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-8')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 8 -->
+        <div id="quiz-8" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Наследование</h4>
+          <p class="mb-3">1. Как указать, что класс B наследует класс A?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">class B(A):</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">class B extends A</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">B < A</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как вызвать метод родителя?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">super().method()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">parent.method()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">self.parent.method()</button>
+          </div>
+        </div>
+      </div>
 
-      <!-- Уроки 8–35 (копируй структуру и меняй номер, эмодзи, название, описание) -->
+      <!-- Урок 9 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">✨</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 9: Магические методы</h3>
+        <p class="text-slate-400 mb-4 text-sm">__str__, __repr__, __eq__, __lt__</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-9')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 9 -->
+        <div id="quiz-9" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Магические методы</h4>
+          <p class="mb-3">1. Какой метод возвращает строковое представление объекта для пользователей?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__str__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__repr__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__string__</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой метод вызывается при len(obj)?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__len__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__length__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__size__</button>
+          </div>
+        </div>
+      </div>
 
-      <!-- 8 --> Урок 8: Наследование и полиморфизм (Средний)
-      <!-- 9 --> Урок 9: Магические методы (__str__, __repr__, __eq__) (Средний)
-      <!-- 10 --> Урок 10: Декораторы и замыкания (Продвинутый)
-      <!-- 11 --> Урок 11: Генераторы и yield (Продвинутый)
-      <!-- 12 --> Урок 12: Итераторы и протоколы (Продвинутый)
-      <!-- 13 --> Урок 13: Модули и пакеты (Новичок)
-      <!-- 14 --> Урок 14: Работа с датами (datetime, time) (Средний)
-      <!-- 15 --> Урок 15: Регулярные выражения (re) (Средний)
-      <!-- 16 --> Урок 16: Исключения (try-except-else-finally) (Новичок)
-      <!-- 17 --> Урок 17: Контекстные менеджеры (with) (Средний)
-      <!-- 18 --> Урок 18: Многопоточность (threading) (Продвинутый)
-      <!-- 19 --> Урок 19: Многопроцессность (multiprocessing) (Продвинутый)
-      <!-- 20 --> Урок 20: Асинхронность (asyncio, async/await) (Продвинутый)
-      <!-- 21 --> Урок 21: Telegram-боты на aiogram (Средний)
-      <!-- 22 --> Урок 22: Парсинг сайтов (BeautifulSoup + requests) (Средний)
-      <!-- 23 --> Урок 23: API-запросы (requests, httpx) (Средний)
-      <!-- 24 --> Урок 24: Flask — первый веб-сайт (Средний)
-      <!-- 25 --> Урок 25: Django — блог + админка (Продвинутый)
-      <!-- 26 --> Урок 26: Базы данных (SQLite + SQLAlchemy) (Средний)
-      <!-- 27 --> Урок 27: PostgreSQL + ORM (Продвинутый)
-      <!-- 28 --> Урок 28: Деплой на Render / PythonAnywhere (Средний)
-      <!-- 29 --> Урок 29: Pygame — простая игра (змейка) (Средний)
-      <!-- 30 --> Урок 30: Tkinter — GUI-приложение (Новичок)
-      <!-- 31 --> Урок 31: Автоматизация Excel (openpyxl / pandas) (Средний)
-      <!-- 32 --> Урок 32: Парсинг PDF и Word (pdfplumber, python-docx) (Средний)
-      <!-- 33 --> Урок 33: Работа с изображениями (Pillow) (Средний)
-      <!-- 34 --> Урок 34: Веб-скрейпинг с Selenium (Продвинутый)
-      <!-- 35 --> Урок 35: Финальный проект — бот-магазин + сайт (Продвинутый)
+      <!-- Урок 10 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🎨</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 10: Декораторы и замыкания</h3>
+        <p class="text-slate-400 mb-4 text-sm">@decorator, wraps, functools</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-10')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 10 -->
+        <div id="quiz-10" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Декораторы</h4>
+          <p class="mb-3">1. Что такое декоратор в Python?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Функция, изменяющая поведение другой функции</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Специальный класс</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Тип данных</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как применить декоратор к функции?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">@decorator перед функцией</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">#decorator</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">*decorator</button>
+          </div>
+        </div>
+      </div>
 
-      <!-- Для каждого урока копируй структуру блока выше и меняй эмодзи, название, описание и id квиза (quiz-8, quiz-9 и т.д.) -->
+      <!-- Урок 11 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">⚙️</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 11: Генераторы и yield</h3>
+        <p class="text-slate-400 mb-4 text-sm">yield, next, send, yield from</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-11')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 11 -->
+        <div id="quiz-11" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Генераторы</h4>
+          <p class="mb-3">1. Какое ключевое слово используется в генераторах?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">yield</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">return</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">generate</button>
+          </div>
+          <p class="mb-3 mt-4">2. Чем генератор отличается от обычной функции?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Сохраняет состояние между вызовами</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Возвращает список</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Не может принимать аргументы</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 12 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🔄</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 12: Итераторы и протоколы</h3>
+        <p class="text-slate-400 mb-4 text-sm">__iter__, __next__, Iterable</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-12')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 12 -->
+        <div id="quiz-12" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Итераторы</h4>
+          <p class="mb-3">1. Какие методы должен содержать итератор?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__iter__ и __next__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__start__ и __end__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__get__ и __set__</button>
+          </div>
+          <p class="mb-3 mt-4">2. Что возвращает метод __iter__?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Сам объект итератора</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Первый элемент</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Количество элементов</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 13 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">📦</span>
+          <span class="text-sm text-slate-400">Новичок</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 13: Модули и пакеты</h3>
+        <p class="text-slate-400 mb-4 text-sm">import, from, __name__, pip</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-13')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 13 -->
+        <div id="quiz-13" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Модули</h4>
+          <p class="mb-3">1. Как импортировать только функцию sqrt из модуля math?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">from math import sqrt</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">import sqrt from math</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">include math.sqrt</button>
+          </div>
+          <p class="mb-3 mt-4">2. Для чего используется if __name__ == "__main__"?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для выполнения кода только при запуске файла</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для проверки версии Python</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для импорта модуля</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 14 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">📅</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 14: Работа с датами</h3>
+        <p class="text-slate-400 mb-4 text-sm">datetime, time, timedelta, strftime</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-14')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 14 -->
+        <div id="quiz-14" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Дата и время</h4>
+          <p class="mb-3">1. Как получить текущую дату и время?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">datetime.now()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">date.today()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">time.current()</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой модуль нужно импортировать?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">import datetime</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">import time</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">import date</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 15 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🔍</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 15: Регулярные выражения</h3>
+        <p class="text-slate-400 mb-4 text-sm">re, search, match, findall, sub</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-15')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 15 -->
+        <div id="quiz-15" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Регулярные выражения</h4>
+          <p class="mb-3">1. Какой метод ищет все совпадения в строке?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">findall()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">search()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">match()</button>
+          </div>
+          <p class="mb-3 mt-4">2. Что означает шаблон \d?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Любая цифра</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Любая буква</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Пробел</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 16 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">⚠️</span>
+          <span class="text-sm text-slate-400">Новичок</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 16: Исключения</h3>
+        <p class="text-slate-400 mb-4 text-sm">try-except-else-finally, raise</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-16')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 16 -->
+        <div id="quiz-16" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Исключения</h4>
+          <p class="mb-3">1. Какой блок выполняется всегда?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">finally</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">except</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">else</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как вызвать исключение вручную?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">raise Exception</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">throw Exception</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">new Exception</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 17 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">📌</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 17: Контекстные менеджеры</h3>
+        <p class="text-slate-400 mb-4 text-sm">with, __enter__, __exit__, contextlib</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-17')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 17 -->
+        <div id="quiz-17" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Контекстные менеджеры</h4>
+          <p class="mb-3">1. Какие методы нужно определить для контекстного менеджера?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__enter__ и __exit__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__start__ и __end__</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">__open__ и __close__</button>
+          </div>
+          <p class="mb-3 mt-4">2. Для чего используется with?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для автоматического управления ресурсами</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для импорта модулей</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для создания циклов</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 18 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🧵</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 18: Многопоточность</h3>
+        <p class="text-slate-400 mb-4 text-sm">threading, Thread, Lock, Queue</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-18')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 18 -->
+        <div id="quiz-18" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Многопоточность</h4>
+          <p class="mb-3">1. Какой модуль нужен для работы с потоками?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">threading</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">thread</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">multithread</button>
+          </div>
+          <p class="mb-3 mt-4">2. Для чего нужен Lock?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для синхронизации доступа к ресурсам</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для остановки потока</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Для удаления потока</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 19 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">⚡</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 19: Многопроцессность</h3>
+        <p class="text-slate-400 mb-4 text-sm">multiprocessing, Process, Pool</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-19')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 19 -->
+        <div id="quiz-19" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Многопроцессность</h4>
+          <p class="mb-3">1. Чем процесс отличается от потока?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Процессы имеют свою память</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Потоки быстрее процессов</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Процессов не бывает в Python</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой класс используется для создания пула процессов?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Pool</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">ProcessPool</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">MultiPool</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 20 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">⏳</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 20: Асинхронность</h3>
+        <p class="text-slate-400 mb-4 text-sm">asyncio, async/await, gather</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-20')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 20 -->
+        <div id="quiz-20" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Асинхронность</h4>
+          <p class="mb-3">1. Какие ключевые слова используются для асинхронных функций?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">async и await</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">asyn и wait</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">thread и await</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой модуль используется?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">asyncio</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">async</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">await</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 21 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🤖</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 21: Telegram-боты на aiogram</h3>
+        <p class="text-slate-400 mb-4 text-sm">Bot, Dispatcher, F, handlers</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-21')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 21 -->
+        <div id="quiz-21" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Telegram-боты</h4>
+          <p class="mb-3">1. Какая популярная библиотека для ботов на Python?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">aiogram</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">telegram</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">bot</button>
+          </div>
+          <p class="mb-3 mt-4">2. Что нужно для создания бота?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Токен от BotFather</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Номер телефона</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Email</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 22 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🕷️</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 22: Парсинг сайтов</h3>
+        <p class="text-slate-400 mb-4 text-sm">BeautifulSoup, requests, lxml</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-22')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 22 -->
+        <div id="quiz-22" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Парсинг</h4>
+          <p class="mb-3">1. Какая библиотека для парсинга HTML?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">BeautifulSoup</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">requests</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">scrapy</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как отправить GET-запрос?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">requests.get()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">requests.post()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">requests.send()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 23 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🌐</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 23: API-запросы</h3>
+        <p class="text-slate-400 mb-4 text-sm">requests, httpx, json, status codes</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-23')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 23 -->
+        <div id="quiz-23" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: API</h4>
+          <p class="mb-3">1. Какой метод используется для получения данных с API?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">GET</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">POST</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">PUT</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как получить JSON из ответа?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">response.json()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">response.text()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">response.data()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 24 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🍃</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 24: Flask — первый веб-сайт</h3>
+        <p class="text-slate-400 mb-4 text-sm">Flask, routes, templates, render</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-24')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 24 -->
+        <div id="quiz-24" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Flask</h4>
+          <p class="mb-3">1. Как создать экземпляр Flask?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Flask(__name__)</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Flask()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">create_app()</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой декоратор для маршрутов?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">@app.route()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">@app.get()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">@route()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 25 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🎸</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 25: Django — блог + админка</h3>
+        <p class="text-slate-400 mb-4 text-sm">Django, models, views, admin</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-25')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 25 -->
+        <div id="quiz-25" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Django</h4>
+          <p class="mb-3">1. Как создать новый проект Django?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">django-admin startproject</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">python manage.py runserver</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">django start</button>
+          </div>
+          <p class="mb-3 mt-4">2. Где создаются модели?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">models.py</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">views.py</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">urls.py</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 26 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">💾</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 26: Базы данных</h3>
+        <p class="text-slate-400 mb-4 text-sm">SQLite, SQLAlchemy, ORM</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-26')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 26 -->
+        <div id="quiz-26" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Базы данных</h4>
+          <p class="mb-3">1. Какая встроенная БД в Python?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">SQLite</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">MySQL</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">PostgreSQL</button>
+          </div>
+          <p class="mb-3 mt-4">2. Что такое ORM?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Объектно-реляционное отображение</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">База данных</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Язык запросов</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 27 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🐘</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 27: PostgreSQL + ORM</h3>
+        <p class="text-slate-400 mb-4 text-sm">psycopg2, asyncpg, SQLAlchemy</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-27')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 27 -->
+        <div id="quiz-27" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: PostgreSQL</h4>
+          <p class="mb-3">1. Какая библиотека для работы с PostgreSQL?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">psycopg2</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">mysql-connector</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">sqlite3</button>
+          </div>
+          <p class="mb-3 mt-4">2. Чем PostgreSQL отличается от SQLite?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Клиент-серверная БД</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Встраиваемая БД</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Нет отличий</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 28 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🚀</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 28: Деплой на Render / PythonAnywhere</h3>
+        <p class="text-slate-400 mb-4 text-sm">хостинг, деплой, WSGI, env</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-28')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 28 -->
+        <div id="quiz-28" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Деплой</h4>
+          <p class="mb-3">1. Что обычно нужно для деплоя?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">requirements.txt</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">setup.py</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Dockerfile</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой сервер часто используют для Flask?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Gunicorn</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Apache</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Nginx</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 29 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🐍</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 29: Pygame — простая игра</h3>
+        <p class="text-slate-400 mb-4 text-sm">pygame, спрайты, события</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-29')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 29 -->
+        <div id="quiz-29" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Pygame</h4>
+          <p class="mb-3">1. Что нужно сделать в главном цикле игры?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Обрабатывать события</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Закрыть окно</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Загрузить изображения</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как создать поверхность?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">pygame.Surface()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">pygame.image()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">pygame.display()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 30 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🖼️</span>
+          <span class="text-sm text-slate-400">Новичок</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 30: Tkinter — GUI-приложение</h3>
+        <p class="text-slate-400 mb-4 text-sm">Tkinter, виджеты, события</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-30')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 30 -->
+        <div id="quiz-30" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Tkinter</h4>
+          <p class="mb-3">1. Как создать главное окно?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Tk()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Window()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">main()</button>
+          </div>
+          <p class="mb-3 mt-4">2. Какой метод запускает главный цикл?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">mainloop()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">run()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">start()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 31 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">📊</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 31: Автоматизация Excel</h3>
+        <p class="text-slate-400 mb-4 text-sm">openpyxl, pandas, xlsxwriter</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-31')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 31 -->
+        <div id="quiz-31" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Excel</h4>
+          <p class="mb-3">1. Какая библиотека для работы с Excel?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">openpyxl</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">excel</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">xls</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как сохранить файл Excel?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">workbook.save()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">workbook.write()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">workbook.close()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 32 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">📄</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 32: Парсинг PDF и Word</h3>
+        <p class="text-slate-400 mb-4 text-sm">pdfplumber, PyPDF2, python-docx</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-32')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 32 -->
+        <div id="quiz-32" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: PDF и Word</h4>
+          <p class="mb-3">1. Какая библиотека для PDF?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">PyPDF2</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">python-docx</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">openpyxl</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как создать Word-документ?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Document()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Word()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Doc()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 33 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🎨</span>
+          <span class="text-sm text-slate-400">Средний</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 33: Работа с изображениями</h3>
+        <p class="text-slate-400 mb-4 text-sm">Pillow, Image, фильтры</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-33')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 33 -->
+        <div id="quiz-33" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Изображения</h4>
+          <p class="mb-3">1. Какая библиотека для работы с изображениями?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Pillow</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">image</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">img</button>
+          </div>
+          <p class="mb-3 mt-4">2. Как открыть изображение?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Image.open()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">open()</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">load()</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 34 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🌍</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 34: Веб-скрейпинг с Selenium</h3>
+        <p class="text-slate-400 mb-4 text-sm">Selenium, WebDriver, динамика</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-34')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 34 -->
+        <div id="quiz-34" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Selenium</h4>
+          <p class="mb-3">1. Для чего нужен Selenium?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Автоматизация браузера</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Парсинг статических страниц</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Создание графиков</button>
+          </div>
+          <p class="mb-3 mt-4">2. Что такое WebDriver?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Драйвер для управления браузером</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Библиотека Python</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Фреймворк для тестов</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 35 -->
+      <div class="glass rounded-3xl p-6 hover:scale-105 transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-4xl">🏆</span>
+          <span class="text-sm text-slate-400">Продвинутый</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Урок 35: Финальный проект</h3>
+        <p class="text-slate-400 mb-4 text-sm">бот-магазин + сайт</p>
+        <div class="flex gap-3">
+          <button class="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white text-sm font-medium transition">Пройти урок</button>
+          <button onclick="toggleQuiz('quiz-35')" class="flex-1 px-4 py-3 bg-indigo-600/40 hover:bg-indigo-600/70 rounded-xl text-white text-sm transition">Квиз</button>
+        </div>
+        <!-- Квиз 35 -->
+        <div id="quiz-35" class="hidden mt-6 p-4 bg-black/30 rounded-xl">
+          <h4 class="font-bold mb-4">Квиз: Финальный проект</h4>
+          <p class="mb-3">1. Что включает проект?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Telegram-бот и веб-сайт</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Только бот</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Только сайт</button>
+          </div>
+          <p class="mb-3 mt-4">2. Что будет использоваться для базы данных?</p>
+          <div class="space-y-2">
+            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">SQLite или PostgreSQL</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">Excel</button>
+            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg">JSON файлы</button>
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -223,7 +1115,6 @@
           </div>
         </div>
       `;
-      return;
     }
 
     // Выход
@@ -236,18 +1127,26 @@
     // Открытие/закрытие квиза
     function toggleQuiz(id) {
       const quiz = document.getElementById(id);
-      quiz.classList.toggle('hidden');
+      if (quiz) {
+        quiz.classList.toggle('hidden');
+      }
     }
 
     // Проверка ответа в квизе
     function checkAnswer(btn, isCorrect) {
+      // Убираем предыдущие выделения у кнопок в том же вопросе
+      const parentDiv = btn.parentNode;
+      const buttons = parentDiv.querySelectorAll('button');
+      buttons.forEach(b => {
+        b.classList.remove('selected', 'correct', 'wrong');
+      });
+      
       btn.classList.add('selected');
       if (isCorrect) {
         btn.classList.add('correct');
       } else {
         btn.classList.add('wrong');
       }
-      // Можно добавить подсветку правильного ответа, если нужно
     }
   </script>
 </body>
