@@ -41,6 +41,13 @@
       transform: translateY(-10px) scale(1.02);
       box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
     }
+    /* Стиль для Telegram-ссылки */
+    .telegram-button {
+      background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+    }
+    .telegram-button:hover {
+      background: linear-gradient(135deg, #229ED9 0%, #1f8ec7 100%);
+    }
   </style>
 </head>
 <body>
@@ -168,8 +175,10 @@
             <li>✓ Чат с ментором</li>
             <li>✓ Сертификат</li>
           </ul>
-          <a href="#" class="block w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 rounded-xl font-semibold text-center transition">
-            Купить сейчас
+          <!-- ИЗМЕНЕНО: теперь ссылка на Telegram -->
+          <a href="https://t.me/MrGhostli" target="_blank" class="block w-full py-4 telegram-button hover:opacity-90 rounded-xl font-semibold text-center transition flex items-center justify-center gap-2">
+            <i class="fab fa-telegram-plane text-xl"></i>
+            Купить сейчас — @MrGhostli
           </a>
         </div>
       </div>
